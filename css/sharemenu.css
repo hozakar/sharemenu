@@ -1,0 +1,45 @@
+/* Variables */
+
+/* Share Menu */
+
+._sharemenu_menu_list_ {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  font-size: 14px;
+  padding: .4em 0;
+  margin: .15em 0 0;
+  text-align: left;
+  list-style: none;
+  background-color: white;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+._sharemenu_menu_list_ li a {
+  display: block;
+  padding: .25em 1.5em .25em .75em;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333333;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+._sharemenu_menu_list_ li a:hover {
+  background-color: #f6f6f6;
+  text-decoration: none;
+}
+
+._sharemenu_menu_list_ li a i {
+  display: inline-block;
+  width: 1.25em;
+}

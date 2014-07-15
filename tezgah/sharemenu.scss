@@ -1,0 +1,53 @@
+/* Variables */
+$menuwidth:			160px;
+$fontsize:			14px;
+$bgcolor:			#fff;
+$bordercolor:		#eee;
+$borderradius:		4px;
+$boxshadow:			0 6px 12px rgba(0,0,0,.175);
+
+$menuitem-color:	#333;
+$menuitem-bg:		#f6f6f6;
+
+/* Share Menu */
+._sharemenu_menu_list_ {
+	position: absolute;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: $menuwidth;
+	font-size: $fontsize;
+	padding: .4em 0;
+	margin: .15em 0 0;
+	text-align: left;
+	list-style: none;
+	background-color: $bgcolor;
+	background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid $bordercolor;
+	border-radius: $borderradius;
+	box-shadow: $boxshadow;
+	
+	li {
+		a {
+			display: block;
+			padding: .25em 1.5em .25em .75em;
+			clear: both;
+			font-weight: 400;
+			line-height: 1.6;
+			color: $menuitem-color;
+			white-space: nowrap;
+			text-decoration: none;
+			
+			&:hover {
+				background-color: $menuitem-bg;
+				text-decoration: none;
+			}
+			
+			i {
+				display: inline-block;
+				width: 1.25em;
+			}
+		}
+	}
+}
