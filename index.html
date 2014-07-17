@@ -33,16 +33,40 @@
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dolor et consequat posuere. Fusce auctor velit sit amet enim lobortis fringilla. Nullam dictum mauris eu diam laoreet, vitae imperdiet mi ultrices. Nam sed metus id neque mollis molestie. Sed in ornare metus. Proin urna arcu, tempus et nulla in, interdum tempor est.
 			</p>
-			<a href="http://www.facebook.com/sharer.php?p[title]=HOY&p[url]=http://www.beltslib.net&p[summary]=Özet">hoy</a>
-			<a href="https://www.facebook.com/dialog/feed?
-  app_id=145634995501895
-  &caption=Örnek başlık 
-  &link=http://beltslib.net/
-  &redirect_uri=https://www.facebook.com/" target="_blank">Customized Share</a>
 		</div>
-		<div class="sharemenu"></div>
+        <br><br><br>
+		<div class="container farkli">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ante tortor, dictum vitae fringilla dapibus, scelerisque ac orci. Quisque in urna in est tincidunt rhoncus. Ut sit amet orci lacinia, euismod nisl eu, rutrum orci. Nam sit amet velit dictum ligula laoreet elementum interdum sed mauris. Ut mollis egestas scelerisque. Ut urna purus, tempus ac vulputate sed, iaculis sit amet risus. Sed consequat massa sed semper rhoncus. Morbi eu est mauris. Maecenas tincidunt fermentum augue in pharetra. Quisque nisl nisi, elementum id tincidunt non, fringilla ut nibh. Proin suscipit volutpat pulvinar. Phasellus suscipit purus eu purus porta, non ornare nibh congue. Sed at ultricies enim.
+			</p>
+			<p>
+				In ornare, libero vitae molestie eleifend, nulla metus rhoncus felis, sed condimentum nibh augue eget elit. Quisque aliquet id turpis eu cursus. Donec ut porta mi. Maecenas nec tincidunt nulla. Vestibulum quis placerat neque. Nam ornare, ante id fringilla porta, ipsum nisl iaculis eros, at lacinia sapien nisl at mauris. Donec vitae rutrum lacus. Quisque et feugiat velit. Nullam congue urna consequat iaculis varius. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas vitae arcu fringilla, semper tellus et, tincidunt eros. Morbi mattis ultricies laoreet. Donec id diam mattis, volutpat nisl eget, dapibus nisi. Praesent a orci vitae ipsum rutrum tincidunt vel quis ipsum. Proin laoreet odio eros, quis vestibulum augue imperdiet ut. Morbi eget blandit nunc.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas dolor et consequat posuere. Fusce auctor velit sit amet enim lobortis fringilla. Nullam dictum mauris eu diam laoreet, vitae imperdiet mi ultrices. Nam sed metus id neque mollis molestie. Sed in ornare metus. Proin urna arcu, tempus et nulla in, interdum tempor est.
+			</p>
+        </div>
 		<script>
-			$('.sharemenu').sharemenu();
+			$('.sharemenu').sharemenu({
+			    facebook: {
+			        appid: '145634995501895',
+                    redirect: 'https://facebook.com/'
+			    },
+                extra: [
+                    {
+                        name: 'Sitede Ara',
+                        link: '/ara/[selection].html',
+                        target: '_blank'
+                    },
+                    {
+                        name: 'Ana Sayfaya Dön',
+                        link: 'http://beltslib.net',
+                        fa: 'home'
+                    }
+                ]
+			});
+			$('.farkli').sharemenu();
+            //facebook: '145634995501895'
 		</script>
     </body>
 </html>

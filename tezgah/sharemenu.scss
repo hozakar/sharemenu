@@ -27,6 +27,7 @@ $menuitem-bg:		#f6f6f6;
 	border: 1px solid $bordercolor;
 	border-radius: $borderradius;
 	box-shadow: $boxshadow;
+    user-select: none;
 	
 	li {
 		a {
