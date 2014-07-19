@@ -3,6 +3,12 @@
 
     var allmenus = new Array();
 
+    $(function () {
+        $('body').mousedown(function (e) {
+            $("._sharemenu_menu_list_").css('display', 'none');
+        });
+    });
+
     function init(el, id, param) {
         el.append('<ul class="_sharemenu_menu_list_"></ul>');
         $('._sharemenu_menu_list_')
@@ -11,7 +17,7 @@
                 e = e || window.event;
                 e.stopPropagation();
             })
-            .on('click', function() {
+            .on('click', function () {
                 $("._sharemenu_menu_list_").css('display', 'none');
             });
 
@@ -63,7 +69,7 @@
 
                 if (current.param.twitter) menu += '<li><a href="' + twit + '" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Tweet (' + twittext.length + ' Karakter)</a></li>';
                 if (current.param.facesharer) menu += '<li><a href="' + "https://www.facebook.com/sharer/sharer.php?u=" + location.href + '" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>';
-                if (current.param.faceapp) menu += '<li><a href="https://www.facebook.com/dialog/feed?app_id=' +
+                if (current.param.facefeed) menu += '<li><a href="https://www.facebook.com/dialog/feed?app_id=' +
                     current.param.facebook.appid + '&caption=' + hoy +
                     '&redirect_uri=' + current.param.facebook.redirect +
                     '&link=' + 'http://beltslib.net/' + '" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>';
@@ -86,10 +92,10 @@
             if (param.twitter != 0) param.twitter = 1;
             if (param.facebook != 0) {
                 if (typeof param.facebook == 'object') {
-                    param.faceapp = 1;
+                    param.facefeed = 1;
                     param.facesharer = 0;
                 } else {
-                    param.faceapp = 0;
+                    param.facefeed = 0;
                     param.facesharer = 1;
                 }
             }
@@ -108,12 +114,8 @@
         this.data('sharemenuid', id);
 
         init(this, id, param);
+
+        return this;
     }
     /* End: Plug-in Start */
-
-    $(function () {
-        $('body').mousedown(function (e) {
-            $("._sharemenu_menu_list_").css('display', 'none');
-        });
-    });
 })(jQuery);
