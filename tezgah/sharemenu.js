@@ -4,7 +4,7 @@
     var allmenus = new Array();
 
     $(function () {
-        $('body').mousedown(function (e) {
+        $('body').mousedown(function () {
             $("._sharemenu_menu_list_").css('display', 'none');
         });
     });
@@ -35,11 +35,14 @@
             param: param,
             selisleri: function (e, el) {
                 var hoy = getSelection().toString();
+                hoy = hoy.replace(/\n+/igm, " ").replace(/\*+/igm, " ").replace(/^\s+|\s+$/g, "");
+                /*
                 while (hoy.split('\n').length > 1) hoy = hoy.split('\n').join(' ');
                 while (hoy.split('  ').length > 1) hoy = hoy.split('  ').join(' ');
                 if (hoy === ' ') hoy = '';
                 while (hoy.substr(0, 1) === ' ') hoy = hoy.substr(-1 * (hoy.length - 1));
                 while (hoy.substr((hoy.length - 1), 1) === ' ') hoy = hoy.substr(0, hoy.length - 1);
+                */
 
                 this.openShareMenu(hoy, e, el);
             },

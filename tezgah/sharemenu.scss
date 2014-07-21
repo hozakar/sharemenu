@@ -1,32 +1,32 @@
 /* Variables */
-$menuwidth:			160px;
-$fontsize:			14px;
-$bgcolor:			#fff;
-$bordercolor:		#eee;
-$borderradius:		4px;
-$boxshadow:			0 6px 12px rgba(0,0,0,.175);
+$menuWidth:			160px;
+$fontSize:			14px;
+$bgColor:			#fff;
+$borderColor:		#eee;
+$borderRadius:		4px;
+$boxShadow:			0 6px 12px rgba(0,0,0,.175);
 
-$menuitem-color:	#333;
-$menuitem-bg:		#f6f6f6;
+$menuItem-color:	#333;
+$menuItem-bg:		#f6f6f6;
 
 /* Share Menu */
 ._sharemenu_menu_list_ {
 	position: absolute;
-	z-index: 1000;
+	z-index: 999;
 	display: none;
 	float: left;
-	min-width: $menuwidth;
-	font-size: $fontsize;
+	min-width: $menuWidth;
+	font-size: $fontSize;
 	padding: .4em 0;
 	margin: .15em 0 0;
 	text-align: left;
 	list-style: none;
-	background-color: $bgcolor;
+	background-color: $bgColor;
 	background-clip: padding-box;
 	background-clip: padding-box;
-	border: 1px solid $bordercolor;
-	border-radius: $borderradius;
-	box-shadow: $boxshadow;
+	border: 1px solid $borderColor;
+	border-radius: $borderRadius;
+	box-shadow: $boxShadow;
     user-select: none;
 	
 	li {
@@ -36,12 +36,12 @@ $menuitem-bg:		#f6f6f6;
 			clear: both;
 			font-weight: 400;
 			line-height: 1.6;
-			color: $menuitem-color;
+			color: $menuItem-color;
 			white-space: nowrap;
 			text-decoration: none;
 			
 			&:hover {
-				background-color: $menuitem-bg;
+				background-color: $menuItem-bg;
 				text-decoration: none;
 			}
 			
