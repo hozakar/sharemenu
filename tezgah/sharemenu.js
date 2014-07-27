@@ -36,14 +36,6 @@
             selisleri: function (e, el) {
                 var hoy = getSelection().toString();
                 hoy = hoy.replace(/\n+/igm, " ").replace(/\*+/igm, " ").replace(/^\s+|\s+$/g, "");
-                /*
-                while (hoy.split('\n').length > 1) hoy = hoy.split('\n').join(' ');
-                while (hoy.split('  ').length > 1) hoy = hoy.split('  ').join(' ');
-                if (hoy === ' ') hoy = '';
-                while (hoy.substr(0, 1) === ' ') hoy = hoy.substr(-1 * (hoy.length - 1));
-                while (hoy.substr((hoy.length - 1), 1) === ' ') hoy = hoy.substr(0, hoy.length - 1);
-                */
-
                 this.openShareMenu(hoy, e, el);
             },
             openShareMenu: function (hoy, e, el) {
@@ -91,32 +83,27 @@
 
     /* Plug-in Start */
     $.fn.sharemenu = function (param) {
-        if (param) {
-            if (param.twitter != 0) param.twitter = 1;
-            if (param.facebook != 0) {
-                if (typeof param.facebook == 'object') {
-                    param.facefeed = 1;
-                    param.facesharer = 0;
-                } else {
-                    param.facefeed = 0;
-                    param.facesharer = 1;
-                }
-            }
-            if (param.google != 0) {
-                param.google = 1;
-            }
-        } else {
-            param = {
-                twitter: 1,
-                facesharer: 1,
-                google: 1
+        var values = $.extend({
+            twitter: 1,
+            facesharer: 1,
+            google: 1
+        }, param);
+
+        if (values.facebook != 0) {
+            if (typeof values.facebook == 'object') {
+                values.facefeed = 1;
+                values.facesharer = 0;
+            } else {
+                values.facefeed = 0;
+                values.facesharer = 1;
             }
         }
+
         allmenus.push(new Object());
         var id = allmenus.length - 1;
         this.data('sharemenuid', id);
 
-        init(this, id, param);
+        init(this, id, values);
 
         return this;
     }
