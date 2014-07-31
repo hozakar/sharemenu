@@ -35,7 +35,11 @@
             param: param,
             selisleri: function (e, el) {
                 var hoy = getSelection().toString();
-                hoy = hoy.replace(/\n+/igm, " ").replace(/\*+/igm, " ").replace(/^\s+|\s+$/g, "");
+                hoy = hoy
+                    .replace(/\n+/igm, " ")
+                    .replace(/\*+/igm, " ")
+                    .replace(/^\s+|\s+$/g, "");
+
                 this.openShareMenu(hoy, e, el);
             },
             openShareMenu: function (hoy, e, el) {
@@ -62,17 +66,41 @@
 
                 var current = allmenus[$(el).data('sharemenuid')];
 
-                if (current.param.twitter) menu += '<li><a href="' + twit + '" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Tweet (' + twittext.length + ' Karakter)</a></li>';
-                if (current.param.facesharer) menu += '<li><a href="' + "https://www.facebook.com/sharer/sharer.php?u=" + location.href + '" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>';
-                if (current.param.facefeed) menu += '<li><a href="https://www.facebook.com/dialog/feed?app_id=' +
-                    current.param.facebook.appid + '&caption=' + hoy +
-                    '&redirect_uri=' + current.param.facebook.redirect +
-                    '&link=' + 'http://beltslib.net/' + '" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>';
-                if (current.param.google) menu += '<li><a href="' + goog + '" target="_blank"><i class="fa fa-google"></i>&nbsp;Google\'da Ara</a></li>';
+                if (current.param.twitter)
+                    menu += '<li><a href="' + twit + '" target="_blank">' +
+                        '<i class="fa fa-twitter"></i>&nbsp;Tweet (' + 
+                        twittext.length + ' Karakter)</a></li>';
 
-                if (current.param.extra) if (current.param.extra.length) {
-                    for (var i = 0; i < current.param.extra.length; i++) menu += '<li><a href="' + current.param.extra[i].link.split('[selection]').join(hoy) + '" target="' + (current.param.extra[i].target ? current.param.extra[i].target : '') + '"><i class="fa fa-' + (current.param.extra[i].fa ? current.param.extra[i].fa : 'circle') + '"></i>&nbsp;' + current.param.extra[i].name + '</a></li>';
-                }
+                if (current.param.facesharer)
+                    menu += '<li><a href="' +
+                        'https://www.facebook.com/sharer/sharer.php?u=' +
+                        location.href + '" target="_blank">' +
+                        '<i class="fa fa-facebook"></i>' +
+                        '&nbsp;Facebook</a></li>';
+
+                if (current.param.facefeed)
+                    menu += '<li><a href="https://www.facebook.com/dialog/feed?app_id=' +
+                        current.param.facebook.app_id + '&caption=' + hoy +
+                        '&redirect_uri=' + current.param.facebook.redirect_uri +
+                        '&link=' + 'http://beltslib.net/' + '" target="_blank">' +
+                        '<i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>';
+
+                if (current.param.google)
+                    menu += '<li><a href="' + goog +
+                    '" target="_blank"><i class="fa fa-google">' +
+                    '</i>&nbsp;Google\'da Ara</a></li>';
+
+                if (current.param.extra)
+                    if (current.param.extra.length) {
+                        for (var i = 0; i < current.param.extra.length; i++)
+                            menu += '<li><a href="' +
+                                current.param.extra[i].link.split('[selection]').join(hoy) +
+                                '" target="' +
+                                (current.param.extra[i].target ? current.param.extra[i].target : '') +
+                                '"><i class="fa fa-' +
+                                (current.param.extra[i].fa ? current.param.extra[i].fa : 'circle') +
+                                '"></i>&nbsp;' + current.param.extra[i].name + '</a></li>';
+                    }
 
                 $menu.html(menu);
                 $menu.css('display', 'block');
@@ -89,7 +117,7 @@
             google: 1
         }, param);
 
-        if (values.facebook != 0) {
+        if (values.facebook) {
             if (typeof values.facebook == 'object') {
                 values.facefeed = 1;
                 values.facesharer = 0;
