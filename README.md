@@ -7,6 +7,8 @@ Simple Selection Share Menu (jQuery Plugin)
 * Menü Tweet, Facebook paylaşımı, Google araması seçeneklerini içerir.
 * Menü özelleştirilerek isteğiniz doğrultusunda diğer seçenekler de eklenilebilir.
 
+![ScreenShot](http://beltslib.net/inc/images/kullanici/ShareMenu/sharemenu.jpg)
+
 ### Kullanım
 ```html
 <!-- CSS Dosyası -->
@@ -30,8 +32,6 @@ Simple Selection Share Menu (jQuery Plugin)
 
 ```
 
-[Demo](http://beltslib.net/paylasim-menusu.html)
-
-![ScreenShot](http://beltslib.net/inc/images/kullanici/ShareMenu/sharemenu.jpg)
+### [Demo](http://beltslib.net/paylasim-menusu.html)
 
 Not: Menüdeki ikonlar için [Font Awesome](http://fontawesome.io/) kullanılmıştır.
