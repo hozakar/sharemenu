@@ -23,7 +23,9 @@ Simple Selection Share Menu (jQuery Plugin)
 
 <!-- Aktivasyon -->
 <script>
-	$('.sharemenu').sharemenu();
+  $(function() {
+    $('.sharemenu').sharemenu();
+  });
 </script>
 
 ```
