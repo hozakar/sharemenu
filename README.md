@@ -20,6 +20,12 @@ Simple Selection Share Menu (jQuery Plugin)
 
 <!-- js Dosyası -->
 <script src="js/sharemenu.min.js"></script>
+
+<!-- Aktivasyon -->
+<script>
+	$('.sharemenu').sharemenu();
+</script>
+
 ```
 
 [Demo](http://beltslib.net/paylasim-menusu.html)
