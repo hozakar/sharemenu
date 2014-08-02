@@ -82,7 +82,7 @@
                     menu += '<li><a href="https://www.facebook.com/dialog/feed?app_id=' +
                         current.param.facebook.app_id + '&caption=' + hoy +
                         '&redirect_uri=' + current.param.facebook.redirect_uri +
-                        '&link=' + 'http://beltslib.net/' + '" target="_blank">' +
+                        '&link=' + location.href + '" target="_blank">' +
                         '<i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>';
 
                 if (current.param.google)
