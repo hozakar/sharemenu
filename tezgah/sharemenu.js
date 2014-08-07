@@ -37,7 +37,7 @@
                 var hoy = getSelection().toString();
                 hoy = hoy
                     .replace(/\n+/igm, " ")
-                    .replace(/\*+/igm, " ")
+                    .replace(/\s+/igm, " ")
                     .replace(/^\s+|\s+$/g, "");
 
                 this.openShareMenu(hoy, e, el);
